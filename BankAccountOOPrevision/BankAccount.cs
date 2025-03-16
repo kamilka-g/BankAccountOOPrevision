@@ -8,6 +8,23 @@ namespace BankAccountOOPrevision
 {
     internal class BankAccount
     {
-        public float Balance;
+        private float balance { get; set; }
+
+
+        public void MakeDeposit(float amount)
+        {
+            if (amount < 0)
+            {
+                throw new Exception("Must be positive number");
+
+            }
+            balance += amount;
+        }
+
+        public void MakeWithdrawal(float amount)
+        {
+            balance -= amount;
+
+        }
     }
 }
